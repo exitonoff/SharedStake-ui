@@ -40,6 +40,9 @@ export default {
 
 <style scoped>
 .grid-container {
+  margin: 5vh auto 0 auto;
+  width: 90%;
+  grid-gap: 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -86,7 +89,24 @@ export default {
 }
 
 /* responsive layout */
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 768px) {
+  .grid-container {
+    width: 70%;
+    margin: 8vh auto 0 auto;
+    display: grid;
+    grid-template-areas:
+      'card1 card2'
+      'card3 card4'
+      'card5 card5'
+      'card5 card5'
+      'card6 card7'
+      'card8 card9';
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
   .grid-container {
     width: 70%;
     margin: 8vh auto 0 auto;
