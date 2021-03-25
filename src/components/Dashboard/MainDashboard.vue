@@ -1,6 +1,6 @@
 <template>
   <div class="grid-container">
-    <TotalEthStaked class="card" :totalEther="20340"/>
+    <TotalEthStaked class="card" :totalEther="20340" :history="{ data: totalStakedHistory, labels: totalStakedLabels }" />
     <ExitPoolLiquidity class="card" :exitLiquidity="3634" />
     <ProtocolsInvested class="card" :protocolCount="18" />
     <TotalStakers class="card" :stakerCount="5703" />
@@ -34,7 +34,11 @@ export default {
     ProofOfParticipation,
     SupportedvEth2Pools,
     SgtPrice
-  }
+  },
+  data: () => ({
+    totalStakedHistory: [10, 50, 20, 100, 40, 60, 80],
+    totalStakedLabels: [ new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US') ]
+  })
 }
 </script>
 
