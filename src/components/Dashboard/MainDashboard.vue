@@ -1,33 +1,40 @@
 <template>
   <div class="grid-container">
-    <DashboardItem class="card" headerText="Total Ether Staked" />
-    <DashboardItem class="card" headerText="Exit Pool Liquidity" />
-    <DashboardItem class="card" headerText="Protocols you invest vEth2" />
-    <DashboardItem class="card" headerText="Total Stakers" />
-    <DashboardItem class="card" headerText="vEth2 profits">
-      <template v-slot:main>
-        <div>
-          Main
-        </div>
-      </template>
-      <template v-slot:footer>
-        <div>
-          footer
-        </div>
-      </template>
-    </DashboardItem>
-    <DashboardItem class="card" headerText="Supported Protocols" />
-    <DashboardItem class="card" headerText="Proof of participation" />
-    <DashboardItem class="card" headerText="Supported vEth2 pools" />
-    <DashboardItem class="card" headerText="SGT price" />
+    <TotalEthStaked class="card" :totalEther="20340"/>
+    <ExitPoolLiquidity class="card" :exitLiquidity="3634" />
+    <ProtocolsInvested class="card" :protocolCount="18" />
+    <TotalStakers class="card" :stakerCount="5703" />
+    <VEth2Profits class="card" :profits="47.57" />
+    <SupportedProtocols class="card" :protocolCount="137" />
+    <ProofOfParticipation class="card" :participationCount="1" />
+    <SupportedvEth2Pools class="card" :poolCount="377" />
+    <SgtPrice class="card" :price="50" />
   </div>
 </template>
 
 <script>
-import DashboardItem from "./DashboardItem"
+import TotalEthStaked from "./Gauges/TotalEthStaked";
+import ExitPoolLiquidity from "./Gauges/ExitPoolLiquidity"
+import ProtocolsInvested from "./Gauges/ProtocolsInvested"
+import TotalStakers from "./Gauges/TotalStakers"
+import VEth2Profits from "./Gauges/VEth2Profits"
+import SupportedProtocols from "./Gauges/SupportedProtocols"
+import ProofOfParticipation from "./Gauges/ProofOfParticipation"
+import SupportedvEth2Pools from "./Gauges/SupportedvEth2Pools"
+import SgtPrice from "./Gauges/SgtPrice"
 
 export default {
-  components: { DashboardItem }
+  components: { 
+    TotalEthStaked, 
+    ExitPoolLiquidity,
+    ProtocolsInvested,
+    TotalStakers,
+    VEth2Profits,
+    SupportedProtocols,
+    ProofOfParticipation,
+    SupportedvEth2Pools,
+    SgtPrice
+  }
 }
 </script>
 

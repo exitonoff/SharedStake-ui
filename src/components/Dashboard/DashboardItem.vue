@@ -1,7 +1,9 @@
 <template>
   <div class="item">
     <div class="header">{{ headerText }}</div>
-    <slot name="main"></slot>
+    <div class="main">
+      <slot name="main"></slot>
+    </div>
     <slot name="footer"></slot>
   </div>
 </template>
@@ -23,17 +25,15 @@ export default {
   color: white;
   width: 100%;
   height: 100%;
-  background-color: #181818;
+  background-color: #2a2a2a;
 }
 .header {
-  background-color: #151515;
+  background-color: #272727;
   color: white;
   width: 100%;
   font-size: 0.5em;
 }
-.numbers {
-  color: white;
-  width: 100%;
-  font-size: 0.5em;
+.main {
+  margin: auto 0;
 }
 </style>
