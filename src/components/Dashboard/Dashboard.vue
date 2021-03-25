@@ -1,6 +1,7 @@
 <template>
   <div class="dashboard">
-    <div class="flex_column Stats">
+    <MainDashboard />
+    <!-- <div class="flex_column Stats">
       <div class="StatsHeader">Watch your Stake Sizzle!</div>
       <div class="StatsExp">
         <span id="colored">SharedStake</span> users earn staking rewards
@@ -42,15 +43,38 @@
         <ImageVue :src="'link.svg'" :size="'15px'" class="glow" />
       </div>
     </div>
-    <div class="background" />
+    <div class="background" /> -->
   </div>
 </template>
 
 <script>
-export default {};
+import MainDashboard from "./MainDashboard"
+
+export default {
+  components: { MainDashboard }
+
+};
 </script>
 
 <style scoped>
+.flex_wrapper {
+  display: flex;
+}
+.col {
+  flex-direction: column;
+  border-color: pink;
+  border-style: solid;
+  border: 3px;
+  padding: 4px;
+}
+.row {
+  flex-direction: row;
+  border-color: yellow;
+  border-style: solid;
+  border: 3px;
+  
+  padding: 4px;
+}
 .dashboard {
   z-index: 1;
   width: 100%;
