@@ -1,20 +1,23 @@
 <template>
   <DashboardItem headerText="Total Stakers" >
     <template v-slot:main>
-        <div>
-          {{ stakerCount.toLocaleString("en-US")}}
-        </div>
-      </template>
+      <div>
+        {{ stakerCount.toLocaleString("en-US")}}
+      </div>
+      <Change :change="change" :text="change.toString()" />
+    </template>
   </DashboardItem>
 </template>
 
 <script>
-import DashboardItem from "../DashboardItem"
+import DashboardItem from "../DashboardItem";
+import Change from "./Change";
 
 export default {
-  components: { DashboardItem },
+  components: { DashboardItem, Change },
   props: {
-    stakerCount: Number
+    stakerCount: Number,
+    change: Number
   }
 }
 </script>

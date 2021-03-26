@@ -1,14 +1,14 @@
 <template>
   <div class="grid-container">
-    <TotalEthStaked class="card" :totalEther="20340" :history="{ data: totalStakedHistory, labels: totalStakedLabels }" />
-    <ExitPoolLiquidity class="card" :exitLiquidity="3634" />
-    <ProtocolsInvested class="card" :protocolCount="18" />
-    <TotalStakers class="card" :stakerCount="5703" />
+    <TotalEthStaked class="card" :totalEther="20340" :history="totalStaked" />
+    <ExitPoolLiquidity class="card" :exitLiquidity="3634" :history="exitPoolLiquidity" />
+    <ProtocolsInvested class="card" :protocolCount="18" :history="protocolsInvested" />
+    <TotalStakers class="card" :stakerCount="5703" :change="2" />
     <VEth2Profits class="card" :profits="47.57" />
-    <SupportedProtocols class="card" :protocolCount="137" />
+    <SupportedProtocols class="card" :protocolCount="137" :change="18" />
     <ProofOfParticipation class="card" :participationCount="1" />
-    <SupportedvEth2Pools class="card" :poolCount="377" />
-    <SgtPrice class="card" :price="50" />
+    <SupportedvEth2Pools class="card" :poolCount="377" :change="-13" />
+    <SgtPrice class="card" :price="50" :change="13.5" />
   </div>
 </template>
 
@@ -36,8 +36,18 @@ export default {
     SgtPrice
   },
   data: () => ({
-    totalStakedHistory: [10, 50, 20, 100, 40, 60, 80],
-    totalStakedLabels: [ new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US') ]
+    totalStaked: {
+      data: [10, 50, 20, 100, 40, 60, 80],
+      labels: [ new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US') ]
+    },
+    exitPoolLiquidity: {
+      data: [10, 40, 60, 50, 20, 100, 80],
+      labels: [ new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US') ]
+    },
+    protocolsInvested: {
+      data: [60, 10, 40, 50, 20, 100, 80],
+      labels: [ new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US'), new Date().toLocaleDateString('en-US') ]
+    }
   })
 }
 </script>
